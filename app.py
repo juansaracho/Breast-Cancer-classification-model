@@ -12,10 +12,10 @@ def index():
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
 def predict():
-    Sepal_Length = request.form['sepal_length']
-    Sepal_Width = request.form['sepal_width']
-    Petak_Length = request.form['petal_length']
-    Petal_Width = request.form['petal_width']
+    Sepal_Length = float(request.form['sepal_length'])
+    Sepal_Width = float(request.form['sepal_width'])
+    Petak_Length = float(request.form['petal_length'])
+    Petal_Width = float(request.form['petal_width'])
 
     
       
