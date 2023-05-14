@@ -21,7 +21,7 @@ def predict():
       
     pred = model.predict(np.array([[uniformity_cell_size, uniformity_cell_shape, bare_nuclei, bland_chromatin ]]))
     print(pred)
-    return render_template('index.html', predict=str(pred))
+    return render_template('index.html', predict=(pred))
 
 
 if __name__ == '__main__':
