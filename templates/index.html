@@ -1,18 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charsets="UTF-8">
+	<meta charset="UTF-8">
 	<title>Cancer Classification</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			margin: 0;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		.container {
+			max-width: 500px;
+			margin: 0 auto;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+			color: #555;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-weight: bold;
+			text-align: center;
+			color: #333;
+		}
+	</style>
 </head>
 <body>
-	<form action="{{ url_for('predict')}}" method="POST">
-		uniformity_cell_size:	<input type="number" name="uniformity_cell_size"></br>
-		uniformity_cell_shape:	<input type="number" name="uniformity_cell_shape"></br>
-		bare_nuclei:		<input type="number" name="bare_nuclei"></br>
-		bland_chromatin:	<input type="number" name="bland_chromatin"></br>
-
-		<input type=submit value=Submit>
-	</form>
-	 My final prediction: {{ predict }}
+	<div class="container">
+		<h1>Cancer Classification</h1>
+		<form action="{{ url_for('predict') }}" method="POST">
+			<div class="form-group">
+				<label for="uniformity_cell_size">Uniformity Cell Size:</label>
+				<input type="number" id="uniformity_cell_size" name="uniformity_cell_size" required>
+			</div>
+			<div class="form-group">
+				<label for="uniformity_cell_shape">Uniformity Cell Shape:</label>
+				<input type="number" id="uniformity_cell_shape" name="uniformity_cell_shape" required>
+			</div>
+			<div class="form-group">
+				<label for="bare_nuclei">Bare Nuclei:</label>
+				<input type="number" id="bare_nuclei" name="bare_nuclei" required>
+			</div>
+			<div class="form-group">
+				<label for="bland_chromatin">Bland Chromatin:</label>
+				<input type="number" id="bland_chromatin" name="bland_chromatin" required>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+		<div class="result">
+			My final prediction: {{ predict }}
+		</div>
+	</div>
 </body>
 </html>
