@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charsets="UTF-8">
+	<title>Cancer Classification</title>
+</head>
+<body>
+	<form action="{{ url_for('predict')}}" method="POST">
+		uniformity_cell_size:	<input type="number" name="uniformity_cell_size"></br>
+		uniformity_cell_shape:	<input type="number" name="uniformity_cell_shape"></br>
+		bare_nuclei:		<input type="number" name="bare_nuclei"></br>
+		bland_chromatin:	<input type="number" name="bland_chromatin"></br>
+
+		<input type=submit value=Submit>
+	</form>
+	 My final prediction: {{ predict }}
+</body>
+</html>
