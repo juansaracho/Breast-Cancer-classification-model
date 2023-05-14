@@ -12,16 +12,16 @@ def index():
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
 def predict():
-    uniformity_cell_size = request.form['uniformity_cell_size']
-    uniformity_cell_shape = request.form['uniformity_cell_shape']
-    bare_nuclei = request.form['bare_nuclei']
-    bland_chromatin = request.form['bland_chromatin']
+    Sepal_Length = request.form['sepal_length']
+    Sepal_Width = request.form['sepal_width']
+    Petak_Length = request.form['petal_length']
+    Petal_Width = request.form['petal_width']
 
     
       
-    pred = model.predict(np.array([[uniformity_cell_size, uniformity_cell_shape, bare_nuclei, bland_chromatin ]]))
+    pred = model.predict(np.array([[Sepal_Length, Sepal_Width, Petak_Length, Petal_Width ]]))
     print(pred)
-    return render_template('index.html', predict=(pred))
+    return render_template('index.html', predict=str(pred))
 
 
 if __name__ == '__main__':

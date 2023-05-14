@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charsets="UTF-8">
-	<title>Cancer Classification</title>
+	<title>Iris Classification</title>
 </head>
 <body>
 	<form action="{{ url_for('predict')}}" method="POST">
-		uniformity_cell_size:	<input type="number" name="uniformity_cell_size"></br>
-		uniformity_cell_shape:	<input type="number" name="uniformity_cell_shape"></br>
-		bare_nuclei:		<input type="number" name="bare_nuclei"></br>
-		bland_chromatin:	<input type="number" name="bland_chromatin"></br>
+		Sepal_Length:	<input type="number" name="sepal_length"></br>
+		Sepal_Width:	<input type="number" name="sepal_width"></br>
+		Petal_Length:	<input type="number" name="petal_length"></br>
+		Petal_Width:	<input type="number" name="petal_width"></br>
 
 		<input type=submit value=Submit>
 	</form>
